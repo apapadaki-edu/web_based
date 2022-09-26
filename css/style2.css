@@ -1,19 +1,19 @@
 /* this css file is organized in sections, separated by ### comment lines
     for better navigation (Ctrl + F). The sections are:
     - general styles
-    - header styles
-    - main styles
-    - similar products section styles
-    - aside styles
-    - footer styles
-    - container with variant content (the table/form section in main)
+    - header styles (line 90)
+    - main styles (line 177)
+    - similar products section styles (line 228)
+    - aside styles (line 296)
+    - footer styles (line 376)
+    - container with variant content (the table/form section in main) (line 487)
     - mobile design
         > removed elements
-        > header
-        > mail
-        > similar products
-        > aside 
-        > footer
+        > header (line 640)
+        > main (line 739)
+        > similar products (line 964)
+        > aside (line 1004)
+        > footer  (line 816) 
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Lato&family=Leckerli+One&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&family=Roboto+Condensed:wght@300&display=swap');
