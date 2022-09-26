@@ -1,0 +1,1119 @@
+/* this css file is organized in sections, separated by ### comment lines
+    for better navigation (Ctrl + F). The sections are:
+    - general styles
+    - header styles
+    - main styles
+    - similar products section styles
+    - aside styles
+    - footer styles
+    - container with variant content (the table/form section in main)
+    - mobile design
+        > removed elements
+        > header
+        > mail
+        > similar products
+        > aside 
+        > footer
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Lato&family=Leckerli+One&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&family=Roboto+Condensed:wght@300&display=swap');
+
+/*############# general #######################################################*/
+:root {
+    --blue: rgb(66, 139, 202);
+    --white: rgb(252, 252, 252);
+    --bg-gray: lightgray;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: normal;
+    font-family: 'Lato', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a:any-link {
+    color: var(--blue);   
+}
+
+a:active,
+a:hover{
+    color:black;
+    text-decoration: none;
+}
+
+h1 {
+    flex: 50%;
+    font-family: 'Leckerli One', cursive;
+    font-weight: bold;
+    color: black;
+    font-size: 3em;
+    margin-top: 0;
+}
+
+h2,
+h3,
+h4 {
+    color: rgb(91, 91, 91);
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+button {
+    padding: 4%;
+    border: 1px solid var(--bg-gray);
+    background-color: var(--blue) ;
+    font-weight: bold;
+    color: var(--white);
+}
+
+img {
+    border:2px solid var(--bg-gray);
+    padding: 1%;
+}
+
+.responsive-active-only {
+    pointer-events: unset; /* deactivates links */
+}
+
+/*########### end general ##########################################################*/
+
+
+/* ########## header #############################################################*/
+
+header .container{
+    grid-area: header;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 'row1' 'row2' 'row3';
+}
+
+header .container > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 0;
+}
+
+#topHeaderRow {
+    grid-area: row1;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgb(34, 34, 34);
+    color:var(--white);
+}
+
+header li {
+    display: inline-block;
+    padding:0 1rem;
+}
+
+#topHeaderRow a:any-link {
+    color:var(--white);
+}
+
+
+#logoRow {
+    --white: #E7E7E7;
+    grid-area: row2;
+    color: var(--white);    
+
+}
+
+#logoRow form {
+    flex: 50%;
+    align-self: center;
+    text-align: center;
+}
+
+#logoRow input, 
+#logoRow button {
+    width: min-content;
+    padding: 0.5rem;
+    border: 1px solid var(--bg-gray);
+    background-color: white;
+    color: gray;
+}
+
+#logoRow label {
+    color: white;
+}
+
+#mainNavigationRow {
+    grid-area: row3;
+    border: 1px solid var(--bg-gray);
+    background-color: rgb(248, 248, 248);
+}
+
+#mainNavigationRow li {
+    padding: 1rem;
+    transition-property: background-color;
+    transition-duration: 0.7s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s; 
+}
+
+#mainNavigationRow li:hover{
+    background-color: var(--bg-gray);
+}
+
+#mainNavigationRow a:any-link{
+    color: rgb(91, 91, 91); 
+}
+
+
+/*############ end header ########################################################*/
+
+
+/*############# main #################################################################*/
+
+main {
+    font-size: 0.85rem;
+    color: rgb(91, 91, 91);
+}
+
+h2 {
+    grid-area: portrait-name;
+    font-size: 1.7rem;
+    font-weight: bolder;
+}
+
+picture {
+    grid-area: portrait;
+}
+
+main a{
+    color: var(--blue);
+}
+
+#details {
+    grid-area: details;
+}
+
+.price {
+    margin: 0.5rem 0;
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: red;
+}
+
+#cart button {
+    margin: 0.6rem 0;
+    padding: 0.7rem;
+    background-color: var(--white);
+    font-size: 0.85rem;
+    color: var(--blue);
+}
+
+#cart a {
+    font-weight: bolder;
+}
+ 
+#insertedBox {
+    border: 2px solid var(--bg-gray);
+}
+
+/*########### end main ###########################################################*/
+
+
+/*########## similar products #######################################################*/
+
+.main-item2 h3 {
+    padding-bottom: 0.7rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+
+#productsRow{
+    display: flex;
+    flex: min-content;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    flex: content;
+    row-gap: 1rem;
+    min-width: 200px;
+    max-width: 230px;
+    padding: 2% 1%;
+    border: 1px solid var(--bg-gray);
+    font-size: 0.85rem;
+}
+
+.item > div {
+    text-align: start;
+}
+
+.item img {
+    align-self: center;
+}
+
+.similarTitle a{
+    font-size: 0.8rem;
+    font-weight: bold;    
+    color: var(--blue);
+}
+
+.main-item2 button {
+    margin-top: 1rem;
+    margin-right: 0.1rem;
+    padding: 0.3rem;
+    background-color: rgb(92, 184, 92);    
+}
+
+.main-item2 button a{
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: var(--white);
+}
+
+.main-item2 button:first-of-type {
+    background-color: var(--blue);
+}
+
+.main-item2 button:last-of-type {
+    --blue: rgb(91, 192, 222);
+    background-color: var(--blue);
+}
+
+/*########### end similar products ##############################################*/
+
+
+
+/*############ aside ############################################################*/
+
+aside > div {
+    border:2px solid var(--bg-gray);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--blue);
+}
+
+aside h3 {
+    --bg-gray: rgb(217, 237, 247);
+    padding: 0.5rem;
+    border-bottom: 2px solid var(--bg-gray);
+    border-radius: 0;
+    background-color: var(--bg-gray);
+    font-weight: bold;
+    color: rgb(105, 154, 177);
+}
+
+aside ul {
+    padding: 1rem 1rem 0 1rem;
+}
+
+aside li {
+    padding-bottom: 1.5rem;
+}
+
+#cartInfo {
+    border-color: var(--blue);
+}
+
+#cartInfo h3 {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0.9rem;
+    font-size: 0.7rem;
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem 1rem 0;
+}
+
+.cart-container div:last-of-type button{
+    font-size: 0.75rem;
+}
+
+.cartItem p {
+    display: inline-block;
+    margin-left: 0.75rem;
+    word-wrap: break-word;
+    color: var(--blue);
+}
+
+.cartText {
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: black;
+}
+
+.cartItem a {
+    font-weight: bold;
+}
+
+.totalAmount {
+    font-weight: bold;
+    color: rgb(173, 153, 118);
+}
+
+/* ############# end aside ############################################################*/
+
+
+/* ############## footer #############################################################*/
+
+footer > div {
+    padding-bottom: 3rem;
+    font-size: 0.8rem;
+}
+
+footer h4 {
+    padding: 1% 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(34, 34, 34);
+}
+
+footer li {
+    padding-bottom: 1.2rem;
+}
+
+/* footer just ordered section */
+
+.footer-item3 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.9rem;
+}
+
+.footer-item3 > div > a { 
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 1%;
+}
+
+/* end footer just ordered */
+
+
+/* footer contact section */
+
+.footer-item4 form div label {
+    font-size: 0;
+}
+
+.footer-item4 form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--bg-gray);
+}
+
+.input-field {
+    padding: 2%;
+}
+
+.footer-item4 button {
+    width: 100%;
+}
+
+.responsive-effects {   /*for dropdown*/
+    display:none;
+}
+
+/* end footer contact section */
+
+
+/* footer copyright */
+
+@media (min-width: 1081px){
+    
+    div[class^="footer-item"] {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .item3 {
+        position: relative;
+    }
+
+    .footer-item5 {
+        position: absolute;
+        bottom:0;
+        left: 0;
+        width: min(100vw, 100%);
+        border-radius: 0;
+        background-color: #3A3A3A;  
+    }
+    
+    .footer-item5 p {
+        --side: calc((100% - 1300px) / 2);
+        margin: 0 var(--side) 0 var(--side);
+        padding: .5rem 0;
+        font-size: 0.8rem;
+        color: rgb(172, 172, 172);
+    }
+    
+    .footer-item5 span {
+        float: right;
+    }
+}
+
+/* end footer copyright */
+
+/*############ end footer ###############################################################*/
+
+
+
+/* ############ container with variant content (table/row) #############################*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+table caption {
+    padding: 0.5rem;
+    background-color: rgb(248, 248, 248);
+    text-align: start;
+}
+
+table td {
+    border-top: 1px solid lightgray;
+    padding: 0.5rem;
+}
+
+table th {
+    padding: 0.5rem;
+    border-top: 1px solid lightgray;
+    text-align: start;
+    font-weight: bold;
+}
+
+
+/* form */
+
+picture p {
+    margin-bottom: 1em;
+}
+
+#insertedBox form{
+    padding: 3% 7% 3% 2%;    
+    border-color: rgb(223, 223, 223);
+    background-color: rgb(243, 246, 252);
+}
+
+#insertedBox fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2rem;
+    justify-content: start;
+    margin-top: 1.5rem;
+}
+
+.fieldItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 0.5em;
+}
+
+#insertedBox legend{
+    width: 100%;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid rgb(223, 223, 223);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(91, 91, 91);
+}
+
+#insertedBox label {
+    font-size: 0.9em;
+    font-weight: bolder;
+}
+
+.fieldItem input { 
+    max-width: 80%;
+    padding: 0.55rem;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.fieldItem input[type="date"]{
+    max-width: 70%;
+    padding: 0.8rem;
+}
+
+#insertedBox select {
+    max-width: 70%;
+    padding: 0.5em;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 4px;
+    background-color: rgb(223, 223, 223);
+    font-size: 0.75rem;
+}
+
+#insertedBox button {
+    width: 40%;
+    padding: 0.5rem;
+    font-weight: normal;
+}
+
+#account > div {
+    grid-column: 1;
+}
+
+#account label::after,
+#profile label::after,
+#contact label[for="mobile"]::after {
+    padding-left: 0.2rem;
+    content: "*";
+    color: var(--blue);
+}
+
+#termsField {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 0.2rem;
+    margin: 1rem 0 0.9rem 0;
+}
+
+#termsField input {
+    margin-right: 1%;
+    border: 2px solid rgb(223, 223, 223);
+}
+
+#termsField label::before {
+    padding-right: 0.2rem;
+    content: "*";
+    color: var(--blue);
+}
+
+
+
+
+
+/*################ mobile design ################*/
+
+
+
+
+
+
+@media (max-width: 700px) {
+    * {
+        font-size: min(4vw, 1rem);
+    }
+
+    .responsive-effects {    /* design in footer for dropdown icons in general additional elements for mobile*/
+        display: unset;
+        text-align: center;
+    }
+
+    .responsive-active-only {
+        pointer-events: unset; /* deactivates links */
+    }
+
+    /*################ removed elements ##############################*/
+
+    .footer-item1,   /* already in main navigation*/
+    .footer-item3,   /* there is a link for the cart so it takes unnecessary space */
+    #topHeaderRow li:nth-child(n+3) /* unnecessary, when clicking on cart there is a transition activating the cart section from the aside */
+    {
+        display: none;
+    } 
+
+    #topHeaderRow li a[href='#'] { /* to hide the text in the link - later if there are urls the seclector needs to change ex. href$=... - so that there won't be a problem with in page links */
+        line-height: 0;
+        font-size: 0;
+        color:transparent;
+    }
+
+    /*################ end removed elements ########################*/
+    
+    .grid-container {
+        grid-gap: 2%;
+    }
+
+    /*################## header ###################################*/
+    h1 {
+        padding-left: 1rem;
+    }
+
+    #topHeaderRow > p {
+        font-size: min(3vw, 1em);
+    }
+
+    #topHeaderRow > p a {
+        font-size: min(4vw, 1em);
+        font-weight: bolder;
+    }
+
+    #topHeaderRow li {
+        padding: 0 0.5rem;
+    }
+
+    #logoRow {
+        grid-area: row3;
+        flex-direction: column;
+        align-items: stretch;
+        row-gap: 0.5rem;
+    }
+
+    #logoRow form {
+        width: 90vw;
+        border: 1px solid var(--bg-gray)
+    }
+
+    #logoRow button {
+        border: 0;
+    }
+
+    #logoRow input {
+        width: 70vw;
+        padding: 0.8rem;
+        border: 0px;
+        border-right: 1px solid var(--bg-gray);
+        border-radius: 0;
+    }
+
+    #logoRow form label {
+        font-size: 1px;
+    }
+
+    #mainNavigationRow {
+        grid-area: row2;
+        padding: 0.5rem;
+    }
+
+    #mainNavigationRow > a {
+        grid-area: nav-container-item1;
+    }
+
+    #mainNavigationRow > a i {
+        font-size: 1.7rem;
+        color: rgb(34, 34, 34);
+    }
+    
+    #mainNavigationRow nav {
+        grid-area: nav-container-item2;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        left: -100vw;
+        top:0;
+        border: 0;
+        border-radius: 0;
+        background-color: rgba(34, 34, 34, 0.877);
+        display: grid;
+        grid-template-columns: calc(100vw - 4rem) 4rem;
+        grid-template-areas:
+                            "nav-item2 nav-item1"
+                            "nav-item2 .";
+    }
+
+    #navigationMain > a {
+        grid-area: nav-item1;
+    }
+
+    #navigationMain:target {
+        left: 0vw;
+        transition: left 0.5s ease-out;
+    }
+
+    #navigationMain > a i {
+        margin: 1rem;
+        font-size: 2rem;
+    }
+
+    #navigationMain ul {
+        grid-area: nav-item2;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0;
+        background-color: white;
+
+    }
+
+    #navigationMain ul::before {
+        padding: 3rem 0 0 1rem;
+        height: 14vw;
+        content: "Art Store";
+        font-family: 'Leckerli One', cursive;
+        font-weight: bold;
+        font-size: 2rem;
+        color: var(--white);
+        background-color: rgba(34, 34, 34, 0.938);
+
+    }
+    /*################## header ###################################*/
+
+
+    /*########################## main ##############################*/
+
+    #details {
+        max-width: 90vw;
+        display: grid;
+        grid-row-gap: 1rem;
+    }   
+
+    picture {
+        text-align: center;
+    }
+
+    #portraitDesc {
+        grid-row: 3;
+    }
+
+    #insertedBox {
+         grid-row: 4;
+    }
+
+    /* for the table */
+    #insertedBox table th,
+    #insertedBox table td,
+    #insertedBox {
+        border:0; 
+    }
+    
+    #insertedBox table caption {
+        border-bottom: 1px solid var(--bg-gray);
+        border-radius: 0;       
+        background-color: white;
+        font-size: 1.3em;
+    }
+
+    /* end table part */
+
+
+    /* start form */
+    picture > p {
+        text-align: start;
+    }
+    
+    #insertedBox form {
+        max-width: 95vw;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    #insertedBox fieldset {
+        grid-template-columns: auto;
+        gap: 1.3rem 0;
+    }
+
+    #insertedBox label,
+    #insertedBox form input,
+    #insertedBox form select {
+        font-size: 1rem;
+    }
+
+    #insertedBox button {
+        width: 70%;
+        padding: 0.7rem;
+        font-size: 1rem;
+    }
+    .fieldItem {
+        width: 80vw;
+    }
+
+    #insertedBox legend {
+        font-size: 1.5rem;
+    }
+    /* end form */
+    
+    /*######################### end main #####################################*/
+
+
+    /*########## similar products as a vertical scroll bar ###################*/
+
+    #productsRow {
+        max-width: 93vw;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        padding-top: 1rem;
+        background-color: rgb(240, 240, 240);
+    }
+
+    .item {
+        margin: 0 0 1.5rem 2rem;
+        border: 0;
+        justify-content: middle;
+    }
+    
+    .item img {
+        border: 5px solid rgba(68, 68, 70, 0.884);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .item > div {
+        text-align: center;
+    }
+
+    .item button {
+        background-color: rgb(79, 171, 169);
+    }
+
+    .similarTitle a {
+        font-size: 1rem;
+        color: rgb(91, 91, 91);
+    } 
+
+    /*########## end similar products #############################################*/
+    
+
+    /*########## aside #############################################*/
+    .main-item3 {
+        flex-direction: column-reverse;
+    }
+
+    /*### cart aside ####*/
+
+    #cartInfo {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        right: -100vw;
+        top:0;
+        border: 0;
+        font-size: 1.5em;
+        display: grid;
+        align-items: stretch;
+        justify-items: stretch;
+        grid-template-rows: 10vw auto;
+        grid-template-areas: 'cart-item1'
+                             'cart-item2';
+    }
+    
+    #cartInfo:target {
+        right: 0vw;
+        transition: right 0.5s ease-out;
+    }
+
+    .cartItem,
+    .cartText {
+        font-size: 1.2rem;
+    }
+    
+    #cartInfo button{
+        font-size: 1rem;
+    }
+
+    #cartInfo h3 {
+        grid-area: cart-item1;
+        border-radius: 0;
+        background-color: rgba(255, 255, 255, 0.979);
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: var(--blue);
+    }
+
+    .cartItem {
+        padding: 0.5rem;
+    }
+
+    .cart-container {
+        row-gap: 1rem;
+    }
+
+    #cartInfo .close::after {
+        top: -2rem;
+        right: 0;
+        width: 2rem;
+        height: 2rem;
+        background-color: inherit;
+        font-size: 1.3rem;
+        color: var(--blue);
+    }
+
+    #cartInfo > div{
+        grid-area: cart-item2;
+        border-radius: 0;
+        background-color: rgba(255, 255, 255, 0.973);
+
+    }
+    /* ### end cart ### */
+
+    .popularCategory {
+        max-width: 93vw;
+        border: 0;
+    }
+
+    .popularCategory h3 {
+        border: 0;
+        background-color: white;
+        font-size: 1.3rem;
+        color: rgb(91, 91, 91);
+        padding-bottom: 1rem;
+    }
+
+    .popularCategory ul {
+        padding: 0 1rem;
+    }
+    .popularCategory:nth-child(2) ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        text-align: center;
+        column-gap: 1.5rem;
+    }
+
+    .popularCategory:nth-child(2) li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+    }
+
+    .popularCategory:nth-child(2) li a {
+        max-width: 70%;
+        padding: 0.5rem;
+        box-shadow: 0 1px 2px 1px rgba(88, 88, 88, 0.2), 0 3px 7px 0 rgba(78, 78, 78, 0.19);
+        font-size: 1rem;
+        font-weight: bold;
+        color: rgb(91, 91, 91);
+    }
+
+    .popularCategory:last-child * {
+        display: inline-flex;
+        column-gap: 0.8rem;
+    }
+
+    /*########## end aside #############################################*/
+
+
+
+    /*#################### footer ################################################*/
+    
+    .item3 {
+        text-align: center;
+        padding-top: 1rem;
+    }
+    
+    footer h4 {
+        padding-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+    footer > div {
+        padding: 0;
+    }
+    
+    .footer-item4 form {
+        width: 17rem;
+        row-gap: 1rem;
+    }
+
+    .footer-item4 .input-field,
+    .footer-item4 button {
+        padding: 1rem;
+        border-radius: 0;
+        font-size: min(4.5vw, 2rem);
+    }
+
+    .footer-item4 fieldset {
+        display: none;
+    }
+
+    #contact-form-appear:target {
+        position: fixed;
+        top: 0vh;
+        left: 0vw;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
+        background-color: rgba(91, 91, 91, 0.959);   
+    }
+
+    .close {
+        position: relative;
+        display: block;
+    }
+
+    .close::after {
+        position: absolute;
+        right: -1rem;
+        top: -4rem;/* inside the form, so it needs negative value to move at the top of the screen */
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.712);
+        content: "×";
+        font-size: 1.5rem;
+        color: rgba(91, 91, 91);
+    } 
+
+    .footer-item4 legend {
+        position: absolute;
+        padding-top: .5rem;       
+        bottom: calc(50vh + 12rem);
+        width: 17rem;
+        font-size: 1.5rem;
+        text-align: start;
+        text-shadow: 1px 2px 1pc black;
+        color: white;
+    }
+
+    .footer-item4 a[href$=appear] {
+        padding-left: 1vw ;
+        color: rgb(91, 91, 91);
+    }
+
+    .footer-item5 {
+        padding: 0.5rem;
+        border-radius: 0;
+        background-color: #3A3A3A;
+        text-align: center;
+        color: rgb(172, 172, 172);
+    }
+    
+    .footer-item5 p {
+        font-size: 0.7rem;
+    }
+
+    .footer-item5 span {
+        display: inline-block;
+        font-size: 0.7rem;
+    }
+    /*#################### end footer #######################################*/
+}
+
+@media ((min-width:701px) and (max-width: 1399px)){
+    
+    .container {
+        max-width: 1100px;
+        margin: auto;
+    }
+    .footer-item5 {
+        display: none;
+    }
+}
