@@ -5,7 +5,7 @@ The first page is a sample page of an online store, for a selected product. All 
 is another page where a form for a new user registration is displayed. The second page is also static, there is
 server side programming. In order for the user to navigate to the page with the form, they have to follow the 
 "Create account" link on the main menu.
-
+![link to form page](images/readme_images/link_to_form.png)
 
 A docker container link with the php code that handles the form's inputs, will be provided provided at later 
 stage.
