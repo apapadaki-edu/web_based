@@ -1,6 +1,7 @@
 # Page Layout Project
 This is a static website, which showcases the css and html skills I have gainind in the duration of my studies.
-It was for an assignment, where we were given the desktop layout for the pages and we had to recreate them from scratch. It was also required to make them responsive for different screen sizes. The responsive layout was for us to design [Link to page](https://aspa7beginner.github.io/web_based/).  
+It was for an assignment, where we were given the desktop layout for the pages and we had to recreate them from scratch. 
+It was also required to make them responsive for different screen sizes. The responsive layout was for us to design [Link to website](https://aspa7beginner.github.io/web_based/).  
 
 The first page is a sample page of an online store, for a selected product. All links are simbolic. There
 is another page that contains a form for new user registration. The form page is also static, there is no
@@ -9,7 +10,16 @@ server side programming. In order for the user to navigate to the form page, the
 
 ![link to form page](images/readme_images/link_to_form.png)
 
+<br>
+
 ### Desktop Layout
+
+Following are images of the website. I desided not to make changes to modernize the layout, since the goal was to follow the design given to me. 
+However, I tried to make the mobile design more compact and simple. One can check the responsive layout be following this 
+[link](https://aspa7beginner.github.io/web_based/). If they are on desktop they can use dev tools, otherwise, 
+if they visit from their phone or tablet, they will be presented with the responsive layout automaticaly.
+
+<br>
 
 Requested product page            |  Designed product page
 :-------------------------:|:-------------------------:
@@ -17,7 +27,7 @@ Requested product page            |  Designed product page
 
 Requested form page            |  Designed form page
 :-------------------------:|:-------------------------:
-<img src="images/readme_images/desktop_form_page_layout.png" width="400px">  |  <img src="images/readme_images/requested_desktop_form_page_layout.png" width="400px">
+<img src="images/readme_images/requested_desktop_form_page_layout.png" width="400px">  |  <img src="images/readme_images/desktop_form_page_layout.png" width="400px">
 
 A docker container link with the php code that handles the form's input is in progress and will be provided at a later time.
 
