@@ -15,9 +15,9 @@ server side programming. In order for the user to navigate to the form page, the
 ### Desktop Layout
 
 Following are images of the website. I desided not to make changes to modernize the layout, since the goal was to follow the design given to me. 
-However, I tried to make the mobile design more compact and simple. One can check the responsive layout be following this 
+However, I tried to make the mobile design more compact and simple. One can check the responsive layout by following this 
 [link](https://aspa7beginner.github.io/web_based/). If they are on desktop they can use dev tools, otherwise, 
-if they visit from their phone or tablet, they will be presented with the responsive layout automaticaly.
+if they visit from their phone or tablet, they will be presented with the appropriate layout automaticaly.
 
 <br>
 
@@ -28,6 +28,8 @@ Requested product page            |  Designed product page
 Requested form page            |  Designed form page
 :-------------------------:|:-------------------------:
 <img src="images/readme_images/requested_desktop_form_page_layout.png" width="400px">  |  <img src="images/readme_images/desktop_form_page_layout.png" width="400px">
+
+<br><br>
 
 A docker container link with the php code that handles the form's input is in progress and will be provided at a later time.
 
