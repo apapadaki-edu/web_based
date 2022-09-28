@@ -1,6 +1,6 @@
 # Page Layout Project
 This is a static website, which showcases the css and html skills I have gained in the duration of my studies.
-It was for an assignment, where we were given the desktop layout for the pages, and we had to recreate them from scratch. 
+It was for an assignment, where we were given the desktop layout for the pages and we had to recreate them from scratch. 
 It was also required to make them responsive for different screen sizes. The responsive layout was for us to design [Link to website](https://aspa7beginner.github.io/web_based/).  
 
 The first page is a sample page of an online store, for a selected product. All links are symbolic. There
@@ -14,7 +14,7 @@ server side programming. In order for the user to navigate to the form page, the
 
 ### Desktop Layout
 
-Following are images of the website. I decided not to make changes to modernize the layout, since the goal was to follow the design given to me. 
+Following, are images of the website. I decided not to make changes in order to modernize the layout, since the goal was to follow a given design. 
 However, I tried to make the mobile design more compact and simpler. One can check the responsive layout by following this 
 [link](https://aspa7beginner.github.io/web_based/). If they are on desktop they can use dev tools, otherwise, 
 if they visit from their phone or tablet, they will be presented with the appropriate layout automatically.
