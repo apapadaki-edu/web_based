@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () =>  {
+document.addEventListener("load", () =>  {
 let height;
 
   const sendPostMessage = () => {
