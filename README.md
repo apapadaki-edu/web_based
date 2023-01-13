@@ -1,4 +1,3 @@
-<div id="container">
 # Page Layout Project
 This is a static website, which showcases the css and html skills I have gained in the duration of my studies.
 It was for an assignment, where we were given the desktop layout for the pages and we had to recreate them from scratch. 
@@ -33,5 +32,5 @@ Requested form page            |  Designed form page
 <br><br>
 
 A docker container link with the php code that handles the form's input is in progress and will be provided at a later time.
-</div>
+
 <script src="./hostParentSizing.js"></script>
