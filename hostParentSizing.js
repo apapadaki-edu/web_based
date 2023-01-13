@@ -1,8 +1,8 @@
   let height;
 
   const sendPostMessage = () => {
-    if (height !== document.documentElement.offsetHeight) {
-      height = document.documentElement.offsetHeight;
+    if (height !== document.getElementByClassName("markdown-body")[0].offsetHeight) {
+      height = document.getElementByClassName("markdown-body")[0].offsetHeight;
       window.parent.postMessage({
         frameHeight: height
       }, '*');
