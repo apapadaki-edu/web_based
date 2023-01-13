@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <div id='container'>
 # Page Layout Project
 This is a static website, which showcases the css and html skills I have gained in the duration of my studies.
@@ -36,21 +34,5 @@ Requested form page            |  Designed form page
 
 A docker container link with the php code that handles the form's input is in progress and will be provided at a later time.
 </div>
-</html>
-<script>
 
-  let height;
-  const sendPostMessage = () => {
-    if (height !== document.getElementById('container').offsetHeight) {
-      height = document.getElementById('container').offsetHeight;
-      window.parent.postMessage({
-        frameHeight: height
-      }, '*');
-      console.log(height);
-    }
-  }
-  
-  window.onload = () => sendPostMessage();
-  window.onresize = () => sendPostMessage();
-
-</script>
+<script src="./hostParentSizing"></script>
