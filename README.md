@@ -1,7 +1,7 @@
 # Page Layout Project
 This is a static website, which showcases the css and html skills I have gained in the duration of my studies.
 It was for an assignment, where we were given the desktop layout for the pages and we had to recreate them from scratch. 
-It was also required to make them responsive for different screen sizes. The responsive layout was for us to design [Link to website](https://aspa7beginner.github.io/web_based/).  
+It was also required to make them responsive for different screen sizes. The responsive layout was for us to design [Link to website](index.html).  
 
 The first page is a sample page of an online store, for a selected product. All links are symbolic. There
 is another page that contains a form for new user registration. The form page is also static, there is no
