@@ -1,8 +1,9 @@
- let height;
+document.addEventListener("DOMContentLoaded", () =>  {
+let height;
 
   const sendPostMessage = () => {
-    if (height !== document.getElementsByClassName("markdown-body")[0].offsetHeight) {
-      height = document.getElementsByClassName("markdown-body")[0].offsetHeight;
+    if (height !== document.getElementById("container").offsetHeight) {
+      height = document.getElementById("container")].offsetHeight;
       window.parent.postMessage({
         frameHeight: height
       }, '*');
@@ -12,6 +13,7 @@
 
   window.onload = () => sendPostMessage();
   window.onresize = () => sendPostMessage();
+});
 /*
 used in README.md file for getting its height size and sending it to the hosting size (my main webpage),
 in order to fix the size of the iframe on the parent hosting site the contains it.
