@@ -1,8 +1,8 @@
   let height;
 
   const sendPostMessage = () => {
-    if (height !== document.getElementById('container').offsetHeight) {
-      height = document.getElementById('container').offsetHeight;
+    if (height !== document.documentElement.offsetHeight) {
+      height = document.documentElement.offsetHeight;
       window.parent.postMessage({
         frameHeight: height
       }, '*');
