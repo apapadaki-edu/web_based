@@ -35,4 +35,4 @@ Requested form page            |  Designed form page
 A docker container link with the php code that handles the form's input is in progress and will be provided at a later time.
 </div>
 
-<script src="./hostParentSizing"></script>
+<script src="./hostParentSizing.js"></script>
