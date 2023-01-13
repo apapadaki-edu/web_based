@@ -7,13 +7,12 @@ let height;
       window.parent.postMessage({
         frameHeight: height
       }, '*');
-      console.log(height);
     }
   }
 
   window.onload = () => sendPostMessage();
   window.onresize = () => sendPostMessage();
-}
+
 /*
 used in README.md file for getting its height size and sending it to the hosting size (my main webpage),
 in order to fix the size of the iframe on the parent hosting site the contains it.
