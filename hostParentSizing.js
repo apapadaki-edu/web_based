@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () =>  {
 let height;
 
   const sendPostMessage = () => {
-    if (height !== document.getElementById("container").offsetHeight) {
-      height = document.getElementById("container")].offsetHeight;
+    if (height !== document.getElementsByClassName("markdown-body")[0].offsetHeight) {
+      height = document.getElementsByClassName("markdown-body")[0].offsetHeight;
       window.parent.postMessage({
         frameHeight: height
       }, '*');
