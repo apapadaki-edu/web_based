@@ -9,11 +9,9 @@ In this repo it  is used in the README.md and other .html files for getting its 
 in order to fix the size of the iframe on the parent hosting site the contains it.
 */ 
 let height;
-let origin = window.location.origin;
-
   const sendPostMessage = () => {
-    if (height !== document.getElementsByClassName("markdown-body")[0].offsetHeight) {
-      height = document.getElementsByClassName("markdown-body")[0].offsetHeight;
+    if (height !== document.getElementsByTagName("body")[0].offsetHeight) {
+      height = document.getElementsByTagName("body")[0].offsetHeight;
       window.parent.postMessage({
         frameHeight: height
       }, *);
