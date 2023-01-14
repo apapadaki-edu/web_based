@@ -9,17 +9,16 @@ In this repo it  is used in the README.md and other .html files for getting its 
 in order to fix the size of the iframe on the parent hosting site the contains it.
 */ 
 let height;
-  const sendPostMessage = () => {
-    if (height !== document.getElementsByTagName("body")[0].offsetHeight) {
-      height = document.getElementsByTagName("body")[0].offsetHeight;
-      window.parent.postMessage({
-        frameHeight: height
-      }, '*');
-    }
-  }
-
-  window.onload = () => sendPostMessage();
-  window.onresize = () => sendPostMessage();
+const sendPostMessage = () => {
+   if (height !== document.getElementsByTagName("body")[0].offsetHeight) {
+     height = document.getElementsByTagName("body")[0].offsetHeight;
+     window.parent.postMessage({
+       frameHeight: height
+     }, '*');
+   }
+}
+window.onload = () => sendPostMessage();
+window.onresize = () => sendPostMessage();
 
 /*
 Parent iframe code
