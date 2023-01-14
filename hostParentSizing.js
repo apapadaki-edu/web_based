@@ -8,10 +8,11 @@ Then the parent page takes the height values sent and dynimacally customizes the
 In this repo it  is used in the README.md and other .html files for getting its height size and sending it to the hosting size (my main webpage),
 in order to fix the size of the iframe on the parent hosting site the contains it.
 */ 
+let targetElm = (document.getElementsByClassName("markdown-body") !== null) ? document.getElementsByClassName("markdown-body")[0] : document.getElementsByClassName("grid-container")[0]
 let height;
 const sendPostMessage = () => {
-   if (height !== document.getElementsByTagName("body")[0].offsetHeight) {
-     height = document.getElementsByTagName("body")[0].offsetHeight;
+   if (height !== targetElm.offsetHeight) {
+     height = targetElm.offsetHeight;
      window.parent.postMessage({
        frameHeight: height
      }, '*');
