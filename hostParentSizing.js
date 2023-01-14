@@ -14,7 +14,7 @@ let height;
       height = document.getElementsByTagName("body")[0].offsetHeight;
       window.parent.postMessage({
         frameHeight: height
-      }, *);
+      }, '*');
     }
   }
 
