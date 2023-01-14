@@ -15,7 +15,7 @@ let height;
       height = document.getElementsByClassName("markdown-body")[0].offsetHeight;
       window.parent.postMessage({
         frameHeight: height
-      }, '*');
+      }, 'README.md');
     }
   }
 
