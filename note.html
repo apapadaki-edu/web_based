@@ -149,6 +149,26 @@
                 };
             };
             
+            function clear_db() {
+                var request = db.transaction(["notes"], "readwrite")
+                .objectStore("notes").clear();
+                request.onsuccess  = function(event) {
+                    console.log("database empted");
+                }
+                request.onerror = function(event) {
+                    console.log("something went-wrong")
+                }
+
+                let noteContainer = document.querySelector("#notes-container")
+                let firstNoteChild = noteContainer.firstElementChild;
+                while(firstNoteChild) {
+                    firstNoteChild.remove();
+                    firstNoteChild = noteContainer.firstElementChild;
+                }
+
+                document.getElementById("count").innerHTML = 0;
+            }
+
             // toggles between the front page that lists all notes and the new note section
             function changeVisibilityStatus(trigId){
                 let list = document.getElementById('list-part');
@@ -161,7 +181,7 @@
                     list.style.display = 'flex';
                 }
             }
-        
+            
             window.addEventListener('load', function(){
                 document.querySelector('#themeColor').selected = true;
                 document.querySelector('#themeColor').addEventListener('change', function(){
@@ -174,35 +194,38 @@
         </script>
     </head>
     <body>
-        <h1> Note Pad </h1>
-        <section id="list-part">
-            <nav>
-                <div id="count">0</div>
-                <button id="new-note" onclick="changeVisibilityStatus(this.id)">New</button>
-            </nav>
-            <div id="notes-container">
-            </div> 
-        </section>
-        <form id="edit-part" style="display:none">
-            <input type="text" id="date" name="date" hidden>
-            <input type="text" id="title" name="title" placeholder="Title...">
-            <div id="theme-field">
-                <select id="themeColor" name="themeColor">
-                    <option value="#bfa35a">Remainder</option>
-                    <option value="#8a2f2b">Important</option>
-                    <option value="#308043">Shopping</option>
-                    <option value="#2f5c97">Plan</option>
-                    <option value="#ebeded" selected="1">No Theme</option>
-                </select>
-                <div id="themeColorAssist"></div>
-            </div>
-            <textarea id="body" name="body" placeholder="Text..."></textarea>
+        <div class="container">
+            <h1> Note Pad </h1>
+            <section id="list-part">
+                <nav>
+                    <div id="count">0</div>
+                    <button id="new-note" onclick="changeVisibilityStatus(this.id)">New</button>
+                    <button id="clear-storage" onclick="clear_db()">Clear</button>
+                </nav>
+                <div id="notes-container">
+                </div> 
+            </section>
+            <form id="edit-part" style="display:none">
+                <input type="text" id="date" name="date" hidden>
+                <input type="text" id="title" name="title" placeholder="Title...">
+                <div id="theme-field">
+                    <select id="themeColor" name="themeColor">
+                        <option value="#bfa35a">Remainder</option>
+                        <option value="#8a2f2b">Important</option>
+                        <option value="#308043">Shopping</option>
+                        <option value="#2f5c97">Plan</option>
+                        <option value="#ebeded" selected="1">No Theme</option>
+                    </select>
+                    <div id="themeColorAssist"></div>
+                </div>
+                <textarea id="body" name="body" placeholder="Text..."></textarea>
 
-            <fieldset id="note-actions">
-                <button id="save-note" onclick="changeVisibilityStatus(this.id);add();">Save</button>
-                <button id="delete-note" onclick="changeVisibilityStatus(this.id);remove();">Delete</button>
-                <button id="cancel-note" onclick="changeVisibilityStatus(this.id);">Cancel</button>
-            </fieldset>
-        </form>
+                <fieldset id="note-actions">
+                    <button id="save-note" onclick="changeVisibilityStatus(this.id);add();">Save</button>
+                    <button id="delete-note" onclick="changeVisibilityStatus(this.id);remove();">Delete</button>
+                    <button id="cancel-note" onclick="changeVisibilityStatus(this.id);">Cancel</button>
+                </fieldset>
+            </form>
+        </div>
     </body>
 </html>
