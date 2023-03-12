@@ -1,0 +1,131 @@
+<!-- ******** First Exersise: How it works *******
+* The programm scans for available sensors in the user agent and displays as rows:
+* 1. a button that activates and deactivates the sensor (a disabled button in case the sensor isn't found)
+* 2. an input field in which the user defines the period that the measurements are displayed
+* 3. a cell that displays the measurments (shows the results once the sensor is activated)
+* For a sensor to start the user must press the button and provide a period.
+* For the sensor to deactivate the user must press the button again.
+* IMPORTANT: The user can change the period while the sensor is active, by changing its value in the 
+*   input field and pressing enter.
+-->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <title>Sensors</title>
+    <link href="sensor.css" rel="stylesheet">
+    <script type="text/javascript" defer>
+
+        // array of all sensors we are going to check for availability
+        const sensors = [
+            'devicemotion',
+            'devicetemperature',
+            'devicepressure',
+            'devicelight',
+            'deviceproximity',
+            'devicenoise',
+            'devicehumidity',
+            'devicemagneticfield',
+            'deviceorientation'
+        ];
+
+        var sensorWorkers = {
+            devicemotion: null,
+            devicetemperature:null,
+            devicepressure:null,
+            devicelight:null,
+            deviceproximity:null,
+            devicenoise:null,
+            devicehumidity:null,
+            devicemagneticfield:null,
+            deviceorientation:null
+        }
+
+        function display() {
+                var _ = "";
+                sensors.forEach(function (elmName) {
+                    let element = 'on' + elmName;
+                    if (element in window) {
+                        _ += `<div class="sensor-container"><button class="${elmName} sensor">${elmName.substring(6)} sensor</button>\
+                            <input class="${elmName}-period" type="text" name="interval" placeholder="period (ms)">\
+                            <p class="${elmName}-vals"></p></div>`;
+                            return;
+                    }
+                    _ += `<div class="sensor-container"><button class="${elmName} sensor" disabled>${elmName.substring(6)} sensor</button>\
+                        <input class="${elmName}-period" type="text" name="interval" placeholder="period (ms)" disabled>\
+                        <p class="${elmName}-vals"></p></div>`;
+                    
+                });
+                document.querySelector('.sensor-list').innerHTML = _;
+        }
+
+        window.addEventListener("load", () => {
+
+            display(); // calls display for the sensors
+
+            document.querySelectorAll(".sensor").forEach((elm)=>{
+
+                elm.addEventListener("click", (btn)=>{
+
+                    btn.target.classList.toggle("active");
+
+                    let sensor = btn.target.classList[0];
+
+
+                    if (!document.querySelector(`.${sensor}`).classList.contains("active") && sensorWorkers[sensor]) {sensorWorkers[sensor].terminate(); return;}
+                    console.log(sensor);
+                    sensorWorkers[sensor] = new Worker("periodWorker.js");
+                    console.log(sensorWorkers[sensor]);
+
+
+                    window.addEventListener(sensor, (dm)=>{
+                        
+                        document.querySelector(`.${sensor}-period`).onchange = function(e) {
+                            if (sensorWorkers[sensor])  sensorWorkers[sensor].terminate();
+                            sensorWorkers[sensor] = new Worker("periodWorker.js"); 
+                            sensorWorkers[sensor].postMessage(e.target.value);
+                        }
+                    
+                        sensorWorkers[sensor].onmessage = function(ev) {
+                            let values;
+                            switch(sensor){
+                                case "devicemotion":
+                                //document.querySelector(".test-display").innerHTML = ev.data;
+                                    values = `<p>Accelerometer: x:${parseFloat(dm.acceleration.x).toFixed(2)}, y:${parseFloat(dm.acceleration.y).toFixed(2)}, z:${parseFloat(dm.acceleration.z).toFixed(2)}</p>\
+                                        <p>Gyroscope: alpha:${parseFloat(dm.rotationRate.alpha).toFixed(2)}, beta:${parseFloat(dm.rotationRate.beta).toFixed(2)}, gamma:${parseFloat(dm.rotationRate.gamma).toFixed(2)}</p>`;
+                                    break;
+                                case "devicemagneticfield":
+                                    let x = parseFloat(dm.x).toFixed(2);
+                                    let y = parseFloat(dm.y).toFixed(2);
+                                    let z = parseFloat(dm.z).toFixed(2);
+                                    values = `x:${x}, y:${y}, z:${z}`;
+                                    break;
+                                case "deviceorientation":
+                                    let alpha = parseFloat(dm.alpha).toFixed(2);
+                                    let beta = parseFloat(dm.beta).toFixed(2);
+                                    let gamma = parseFloat(dm.gamma).toFixed(2);
+                                    values = `alpha:${alpha}, beta:${beta}, gamma:${gamma}`;
+                                    break;
+                                default:
+                                    values = parseFloat(dm.value).toFixed(2);
+                                    break;
+                            }
+                            // the measured values are inserted in the corresponding table cell 
+                            document.querySelector(`.${sensor}-vals`).innerHTML = values;  
+                        }
+                    }, true);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+<h1>Sensor Playground</h1>
+<section class="sensor-list"></section>
+</body>
+</html>

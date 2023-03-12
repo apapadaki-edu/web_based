@@ -1,0 +1,94 @@
+* {
+    font-family: sans-serif,Verdana, Geneva, Tahoma;
+}
+
+body{
+    padding:1em;
+    font-size: calc(15px + 0.390625vw);
+    background-color: #190B28;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: normal;
+    padding:1em 0;
+    color:white;
+}
+
+.sensor-list {
+    margin: 0 auto;
+    max-width: 900px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.sensor-container {
+    display: grid;
+    grid-template-areas: "activate period"
+                    "values values";
+    grid-template-columns: 55% 33%;
+    justify-content: center;
+    justify-items: stretch;
+    column-gap: 2em;
+}
+
+.sensor-container button {
+    grid-area: activate;
+    box-sizing: border-box;
+    background-color: #ff7d00 ;
+    color:white;
+    max-width: 200px;
+    padding:0.5em;
+    border: 0px;
+    border-radius: 10px;
+
+}
+button:disabled{
+    background-color: #685762;
+    color:black;
+}
+
+button.active {
+    border: 3px solid #ffa44f;
+    color:white;
+}
+
+.sensor-container input {
+    grid-area: period;
+    box-sizing: border-box;
+    padding:0.7rem;
+    border-radius: 20px;
+    border: 1px solid #ff7d00;
+    background-color: #ffffffe6;
+}
+
+input:disabled {
+    background-color: #80808014;
+    color:#97959519;
+    border:0px;
+}
+
+::placeholder {
+    color: #6d6d6d53;
+    opacity: 1; /* Firefox */
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: #6d6d6d53;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+color: #6d6d6d53;
+}
+
+.sensor-container p {
+    grid-area: values;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+    color: white;
+}
