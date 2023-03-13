@@ -27,4 +27,7 @@ Requested product page            |  Requested form page
 
 <br><br>
 
+### Form Handler
+
+Inside the handle_form_input folder there is a sample implementation of backend coding. 
 A docker container link with the php code that handles the form's input is in progress and will be provided at a later time.
