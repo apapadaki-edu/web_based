@@ -1,11 +1,11 @@
 ## Page Layout Project
 This is a static website, which showcases the css and html skills I have gained in the duration of my studies.
 It was for an assignment, where we were given the desktop layout for the pages and we had to recreate them from scratch. 
-It was also required to make them responsive for different screen sizes. The responsive layout was for us to design [Link to website](./homepage.html).  
+It was also required to make them responsive for different screen sizes. The responsive layout was for us to design [Link to website] (./homepage.html).  
 
 The first page is a sample page of an online store, for a selected product. All links are symbolic. There
 is another page that contains a form for new user registration. The form page is also static, there is no
-server side programming. In order for the user to navigate to the form page, they have to follow the 
+server side programming. For the user to navigate to the form page, they have to follow the 
 "Create new account" link on main menu's banner.
 
 ![link to form page](images/readme_images/link_to_form.png)
@@ -29,13 +29,13 @@ Requested product page            |  Requested form page
 
 ### Form Handler
 
-Inside the [handle_form_input](/handle_form_input) folder there is a sample implementation of backend coding. The account.html file -in the previously mentioned folder, named index.php- contains a form for creating a new user. The backend implementation includes, input verification (for instance, if a required field is empty) and basic CRUD operations for new and existing customers.
+Inside the [handle_form_input](/handle_form_input) folder there is a sample implementation of backend coding. The account.html file -in the previously mentioned folder, named index.php- contains a form for creating a new user. The backend implementation includes input verification (for instance, if a required field is empty) and basic CRUD operations for new and existing customers.
 Files and purpose:
  * index.php: presents the user with the form for inserting their information
- * verify.php: destination file after index.php form complition (checks if required fields are filled out)
- * administration.php: used for handling the users (navigated to, from the verify.php file, if all went well with the user input). From here users are displayed, and buttons are available for deleting, updating and viewing users.
+ * verify.php: destination file after index.php form completion (checks if required fields are filled out)
+ * administration.php: used for handling the users (navigated to, from the verify.php file, if all went well with the user input). From here users are displayed, and buttons are available for deleting, updating, and viewing users.
  * states.php: defines classes for handling basic database operations. Firstly, in the file the abstruct class State is defined, with two abstract methods. One method for interacting with the database and executing the query for a CRUD operation and one for generating the apropriate html code, that displays the result of the query. Then, there are defined classes that inherit from the State class and implement its methods for the different database operations, them being DeleteCustomer, ViewCustomer, ListCustomer, UpdateCustomer, InsertCustomer and EditCustomer.
-  * configuration.php: defines globals for the database connection.
-  
+  * config.php: defines globals for the database connection (postgresql).
+  * testart.conf: apache configuration directive for out website.
   
 A docker container link with the php code that handles the form's input is in progress and will be provided at a later time.
