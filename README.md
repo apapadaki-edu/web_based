@@ -29,6 +29,6 @@ Requested product page            |  Requested form page
 
 ### Form Handler
 
-Inside the handle_form_input folder there is a sample implementation of backend coding. The account.html file- in the previous mentioned folder, named index.php-which contains a form for creating a new user. The backend implementation includes, input verification (for instance, if a required field is empty) and basic CRUD operations for customers.
+Inside the [handle_form_input](/handle_form_input) folder there is a sample implementation of backend coding. The account.html file- in the previous mentioned folder, named index.php-which contains a form for creating a new user. The backend implementation includes, input verification (for instance, if a required field is empty) and basic CRUD operations for customers.
 
 A docker container link with the php code that handles the form's input is in progress and will be provided at a later time.
