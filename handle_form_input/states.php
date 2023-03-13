@@ -16,7 +16,7 @@ class DeleteCustomer extends State {
         header('Location:administration.php?id='.$id);
     }
 
-    public function execDB($id){ //remember to pass $_GET['id'] instead of $id
+    public function execDB($id){
         try{
             $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
             // set the PDO error mode to exception
@@ -55,10 +55,9 @@ class ViewCustomer extends State {
 
     }
 
-    public function execDB($id){ //remember to pass $_GET['id'] instead of $id
+    public function execDB($id){
         try {
             $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
-            // set the PDO error mode to exception
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $stmt = "SELECT * FROM customer WHERE id= :id";
             $stmt = $pdo->prepare($stmt);
@@ -92,7 +91,7 @@ class ListCustomer extends State {
 
     }
 
-    public function execDB($id=null){ //remember to pass $_GET['id'] instead of $id
+    public function execDB($id=null){
         try {
             $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
             // set the PDO error mode to exception
@@ -117,7 +116,7 @@ class UpdateCustomer extends State {
 
     }
 
-    public function execDB($user){ //remember to pass $_GET
+    public function execDB($user){
         try {
             $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
             // set the PDO error mode to exception
@@ -158,7 +157,7 @@ class InsertCustomer extends State {
         echo '<a href="administration.php" style="background-color:rgb(66, 139, 202);color:white;padding:0.6rem">List Customers</a></p>'; 
     }
 
-    public function execDB($user){ //remember to pass $_POST
+    public function execDB($user){ //pass $_POST
         try {
             $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
             // set the PDO error mode to exception
@@ -258,7 +257,7 @@ class EditCustomer extends State {
 
     }
 
-    public function execDB($id){ //remember to pass $_POST
+    public function execDB($id){
         try {
             $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
             // set the PDO error mode to exception
