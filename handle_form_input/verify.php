@@ -259,8 +259,6 @@
                         </picture>
 
                         <section id="details">
-                            <!-- Wrap the element that changes between pages (i.e. table - form) in a container
-                            for placement in the grid template. -->
                             <div id="insertedBox">
 
                             <?php if ($status){?>
@@ -295,7 +293,7 @@
                                     <input type="hidden" name="terms" value="1">
                                     <input type="hidden" name="status" value="insert">
                                     <input type="submit" name="Proceed" value="Proceed" style="background-color:rgb(66, 139, 202);color:white;padding:0.6rem">
-                                </form> <!-- Check if it still works with the button !!!!!! -->
+                                </form>
 
                             <?php } else { ?>
                                 <h2 style="background-color:rgb(66, 139, 202);color:white;font-size:1.15rem;padding:1.15em">An error has occurred!</h2>
