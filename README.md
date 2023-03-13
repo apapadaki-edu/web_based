@@ -31,12 +31,12 @@ Requested product page            |  Requested form page
 
 Inside the [handle_form_input](/handle_form_input) folder there is a sample implementation of backend coding. The account.html file -in the previously mentioned folder, named index.php- contains a form for creating a new user. The backend implementation includes input verification (for instance, if a required field is empty) and basic CRUD operations for new and existing customers.
 Files and purpose:
-  * **[index.php](/handle_form_input/index.php)**: presents the user with the form for inserting their information
-  * **verify.php**: destination file after index.php form completion (checks if required fields are filled out)
-  * **administration.php**: used for handling the users (navigated to, from the verify.php file, if all went well with the user input). From here users are displayed, and buttons are available for deleting, updating, and viewing users.
-  * **states.php**: defines classes for handling basic database operations. Firstly, in the file the abstruct class State is defined, with two abstract methods. One method for interacting with the database and executing the query for a CRUD operation and one for generating the apropriate html code, that displays the result of the query. Then, there are defined classes that inherit from the State class and implement its methods for the different database operations, them being DeleteCustomer, ViewCustomer, ListCustomer, UpdateCustomer, InsertCustomer and EditCustomer.
-  * **config.php**: defines globals for the database connection (postgresql).
-  * **testart.conf**: apache configuration directive for out website.
-  * **project03_documentation(gr).pdf**: file for explaining the code in greek.
+  * [index.php](/handle_form_input/index.php): presents the user with the form for inserting their information
+  * [verify.php](/handle_form_input/verify.php): destination file after index.php form completion (checks if required fields are filled out)
+  * [administration.php](/handle_form_input/administration.php): used for handling the users (navigated to, from the verify.php file, if all went well with the user input). From here users are displayed, and buttons are available for deleting, updating, and viewing users.
+  * [states.php](/handle_form_input/states.php): defines classes for handling basic database operations. Firstly, in the file the abstruct class State is defined, with two abstract methods. One method for interacting with the database and executing the query for a CRUD operation and one for generating the apropriate html code, that displays the result of the query. Then, there are defined classes that inherit from the State class and implement its methods for the different database operations, them being DeleteCustomer, ViewCustomer, ListCustomer, UpdateCustomer, InsertCustomer and EditCustomer.
+  * [config.php](/handle_form_input/config.php): defines globals for the database connection (postgresql).
+  * [testart.conf](/handle_form_input/testart.conf): apache configuration directive for out website.
+  * [project03_documentation(gr).pdf](/handle_form_input/project03_documentation(gr).pdf): file for explaining the code in greek.
   
 A docker container link with the php code that handles the form's input is in progress and will be provided at a later time.
