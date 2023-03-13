@@ -30,5 +30,12 @@ Requested product page            |  Requested form page
 ### Form Handler
 
 Inside the [handle_form_input](/handle_form_input) folder there is a sample implementation of backend coding. The account.html file -in the previously mentioned folder, named index.php- contains a form for creating a new user. The backend implementation includes, input verification (for instance, if a required field is empty) and basic CRUD operations for new and existing customers.
-
+Files and purpose:
+ * index.php: presents the user with the form for inserting their information
+ * verify.php: destination file after index.php form complition (checks if required fields are filled out)
+ * administration.php: used for handling the users (navigated to, from the verify.php file, if all went well with the user input). From here users are displayed, and buttons are available for deleting, updating and viewing users.
+ * states.php: defines classes for handling basic database operations. Firstly, in the file the abstruct class State is defined, with two abstract methods. One method for interacting with the database and executing the query for a CRUD operation and one for generating the apropriate html code, that displays the result of the query. Then, there are defined classes that inherit from the State class and implement its methods for the different database operations, them being DeleteCustomer, ViewCustomer, ListCustomer, UpdateCustomer, InsertCustomer and EditCustomer.
+  * configuration.php: defines globals for the database connection.
+  
+  
 A docker container link with the php code that handles the form's input is in progress and will be provided at a later time.
