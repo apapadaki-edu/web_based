@@ -34,9 +34,9 @@ Files and purpose:
   * [index.php](/handle_form_input/index.php): presents the user with the form for inserting their information
   * [verify.php](/handle_form_input/verify.php): destination file after index.php form completion (checks if required fields are filled out)
   * [administration.php](/handle_form_input/administration.php): used for handling the users (navigated to, from the verify.php file, if all went well with the user input). From here users are displayed, and buttons are available for deleting, updating, and viewing users.
-  * [states.php](/handle_form_input/states.php): defines classes for handling basic database operations. Firstly, in the file the abstruct class State is defined, with two abstract methods. One method for interacting with the database and executing the query for a CRUD operation and one for generating the apropriate html code, that displays the result of the query. Then, there are defined classes that inherit from the State class and implement its methods for the different database operations, them being DeleteCustomer, ViewCustomer, ListCustomer, UpdateCustomer, InsertCustomer and EditCustomer.
+  * [states.php](/handle_form_input/states.php): defines classes for handling basic database operations. Firstly, in the file the abstract class State is defined, with two abstract methods. One method for interacting with the database and executing the query for a CRUD operation and one for generating the appropriate html code, that displays the result of the query. Then, there are defined classes that inherit from the State class and implement its methods for the different database operations, them being DeleteCustomer, ViewCustomer, ListCustomer, UpdateCustomer, InsertCustomer and EditCustomer.
   * [config.php](/handle_form_input/config.php): defines globals for the database connection (postgresql).
-  * [testart.conf](/handle_form_input/testart.conf): apache configuration directive for out website.
-  * [project03_documentation(gr).pdf](/handle_form_input/project03_documentation(gr).pdf): file for explaining the code in greek.
+  * [testart.conf](/handle_form_input/testart.conf): apache configuration directive for our website.
+  * [project03_documentation(gr).pdf](/handle_form_input/project03_documentation(gr).pdf): file for explaining the code in Greek.
   
 A docker container link with the php code that handles the form's input is in progress and will be provided at a later time.
