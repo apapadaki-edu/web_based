@@ -10,4 +10,4 @@ If they press on a note, a form to modify its contents is displayed
 
 In the form they can add a title, select a theme, and fill note's body text
 
-There are 3 buttons at the buttom, one to save the changes/new note, one to delete it and one to cancel the changes
+There are 3 buttons at the bottom, one to save the changes/new note, one to delete it and one to cancel the changes
