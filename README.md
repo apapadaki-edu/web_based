@@ -6,7 +6,9 @@ Web Applications (each on its own branch)
   - Third one is an app that scans for sensors and when provided a period, the measurements are displayed on screen [Sensor Playground](../../tree/sensors) (html, css, javascript)
 
 <br><br>
-!Currently, most projects are getting updated, with both improving code (from the semester initially developed) and adding more features.
+Currently, most projects are getting updated, with both improving code (from the semester initially developed) and adding more features.
 
+<br>
 I would be extremely grateful for any feedback or tips on how to improve or change these projects. It would help immensely my development as a programmer. 
+
  
