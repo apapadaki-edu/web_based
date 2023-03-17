@@ -5,7 +5,7 @@ Web Applications
   - Second one is just a notebook that uses local storage for saving the notes. [Notepad](../../tree/note-pad) <br> (html, css, javascript)
   - Third one is an app that scans for sensors and when provided a period, the measurements are displayed on screen [Sensor Playground](../../tree/sensors) (html, css, javascript)
 
-
+<br><br>
 !Currently, most projects are getting updated with both improving code (from the semester initially developed) and adding more features.**
 
 
