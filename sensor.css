@@ -4,7 +4,7 @@
 
 body{
     padding:1em;
-    font-size: calc(15px + 0.390625vw);
+    font-size: calc(16px + 0.390625vw);
     background-color: #190B28;
 }
 
@@ -38,22 +38,24 @@ h1 {
 .sensor-container button {
     grid-area: activate;
     box-sizing: border-box;
-    background-color: #ff7d00 ;
+    background-color: #d66700 ;
     color:white;
-    max-width: 200px;
-    padding:0.5em;
+    max-width: max-content;
+    padding:0.5rem;
     border: 0px;
     border-radius: 10px;
+    font-size: 1.03rem;
+    font-weight: bold;
 
 }
 button:disabled{
     background-color: #685762;
-    color:black;
+    color:#c5c5c5;
 }
 
 button.active {
-    border: 3px solid #ffa44f;
-    color:white;
+    background-color:#ea8a31;
+    color:rgb(234, 234, 234);
 }
 
 .sensor-container input {
@@ -61,27 +63,27 @@ button.active {
     box-sizing: border-box;
     padding:0.7rem;
     border-radius: 20px;
-    border: 1px solid #ff7d00;
+    border: 2px solid #ff7d00;
     background-color: #ffffffe6;
 }
 
 input:disabled {
-    background-color: #80808014;
-    color:#97959519;
+    background-color: #80808031;
+    color:#cbcbcb60;
     border:0px;
 }
 
 ::placeholder {
-    color: #6d6d6d53;
+    color: #585858be;
     opacity: 1; /* Firefox */
 }
   
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-color: #6d6d6d53;
+color: #585858be;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-color: #6d6d6d53;
+color: #585858be;
 }
 
 .sensor-container p {
